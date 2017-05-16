@@ -12,6 +12,11 @@ public class MainActivity extends AppCompatActivity {
     public enum ExerciseType {
         WEIGHT_LIFTING, YOGA, CARDIO
     }
+    public static String weightTitle = "Weight Lifting";
+    public static String yogaTitle = "Yoga";
+    public static String cardioTitle = "Cardio";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,35 +30,47 @@ public class MainActivity extends AppCompatActivity {
         weightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadDetailedActivity(ExerciseType.WEIGHT_LIFTING);
+                try {
+                    loadDetailedActivity(weightTitle);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
         yogaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadDetailedActivity(ExerciseType.YOGA);
+                try {
+                    loadDetailedActivity(yogaTitle);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
         cardioBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadDetailedActivity(ExerciseType.CARDIO);
+                try {
+                    loadDetailedActivity(cardioTitle);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
 
-    private void loadDetailedActivity(ExerciseType exerciseType){
+    private void loadDetailedActivity(String exerciseType) throws Exception{
 
-        switch(exerciseType){
-            case WEIGHT_LIFTING:
-                break;
-            case YOGA:
-                break;
-            case CARDIO:
-                break;
+        if (exerciseType == weightTitle){
 
+        } else if (exerciseType == yogaTitle){
+
+        } else if (exerciseType == cardioTitle){
+
+        } else {
+            throw new Exception("Something went wrong when loading activity");
         }
     }
 }
