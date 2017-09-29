@@ -1,0 +1,11 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- These settings headers are only used on tablets. -->
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="night_mode_switch"
+        android:summary="Turn this on in order to have a night suitable UI"
+        android:title="Night Mode" />
+
+</preference-headers>

@@ -33,13 +33,13 @@ public class DetailsActivity extends AppCompatActivity {
 
         if (exerciseType.equalsIgnoreCase(MainActivity.EXERCISE_WEIGHT_LIFTING)){
             exerciseImage.setImageDrawable(getResources().getDrawable(R.drawable.weight, getApplicationContext().getTheme()));
-            background.setBackgroundColor(Color.parseColor("#2ca5f5"));
+            background.setBackgroundColor(getColor(R.color.weightBlue));
         } else if (exerciseType.equalsIgnoreCase(MainActivity.EXERCISE_YOGA)){
             exerciseImage.setImageDrawable(getResources().getDrawable(R.drawable.lotus, getApplicationContext().getTheme()));
-            background.setBackgroundColor(Color.parseColor("#916bcd"));
+            background.setBackgroundColor(getColor(R.color.yogaPurple));
         } else if (exerciseType.equalsIgnoreCase(MainActivity.EXERCISE_CARDIO)){
             exerciseImage.setImageDrawable(getResources().getDrawable(R.drawable.heart, getApplicationContext().getTheme()));
-            background.setBackgroundColor(Color.parseColor("#52ad56"));
+            background.setBackgroundColor(getColor(R.color.cardioGreen));
         } else {
 
         }

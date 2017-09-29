@@ -4,5 +4,10 @@
     <color name="colorPrimaryDark">#871113</color>
     <color name="colorAccent">#ffffff</color>
     <color name="transparentBlack">#7d000000</color>
+    <color name="weightBlue">#2ca5f5</color>
+    <color name="yogaPurple">#916bcd</color>
+    <color name="cardioGreen">#52ad56</color>
+    <color name="nightModeBG">#616161</color>
+
 
 </resources>
