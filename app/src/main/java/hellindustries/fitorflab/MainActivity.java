@@ -1,22 +1,18 @@
 package hellindustries.fitorflab;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import java.util.Enumeration;
-
 public class MainActivity extends AppCompatActivity {
 
-    public enum ExerciseType {
-        WEIGHT_LIFTING, YOGA, CARDIO
-    }
-    public static String weightTitle = "Weight Lifting";
-    public static String yogaTitle = "Yoga";
-    public static String cardioTitle = "Cardio";
+    public static final String EXTRA_EXERCISE_TITLE = "exercise title";
 
-
+    public static final String EXERCISE_WEIGHT_LIFTING = "Weight Lifting";
+    public static final String EXERCISE_YOGA = "Yoga";
+    public static final String EXERCISE_CARDIO = "Cardio";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    loadDetailedActivity(weightTitle);
+                    loadDetailedActivity(EXERCISE_WEIGHT_LIFTING);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -42,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    loadDetailedActivity(yogaTitle);
+                    loadDetailedActivity(EXERCISE_YOGA);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -53,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    loadDetailedActivity(cardioTitle);
+                    loadDetailedActivity(EXERCISE_CARDIO);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -61,16 +57,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void loadDetailedActivity(String exerciseType) throws Exception{
+    private void loadDetailedActivity(String exerciseType) {
 
-        if (exerciseType == weightTitle){
+        Intent intent = new Intent(this, DetailsActivity.class);
+        intent.putExtra(EXTRA_EXERCISE_TITLE, exerciseType);
+        startActivity(intent);
 
-        } else if (exerciseType == yogaTitle){
-
-        } else if (exerciseType == cardioTitle){
-
-        } else {
-            throw new Exception("Something went wrong when loading activity");
-        }
     }
 }
